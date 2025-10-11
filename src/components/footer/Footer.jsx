@@ -55,7 +55,7 @@ const Footer = () => {
         <p>
           Designed and developed solely by{" "}
           <a
-            href="https://github.com/kushrevankar"
+            href="https://github.com/4t2de"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -71,7 +71,7 @@ const Footer = () => {
                 position: "relative",
                 top: "-1px",
               }}
-            />kushrevankar
+            />4t2de
           </a>
         </p>
       </div>
