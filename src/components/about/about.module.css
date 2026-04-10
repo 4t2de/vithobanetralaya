@@ -24,7 +24,7 @@
     font-size: 40px;
     font-family: 'Inter', serif;
     letter-spacing: -1.5px;
-    max-width: 1200px;
+    max-width: 1400px;
     width: 100%;
     margin: 0 auto;
     padding: 0 clamp(1rem, 5vw, 4rem);
@@ -32,7 +32,7 @@
 }
 
 .descrips {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 60px clamp(1rem, 5vw, 4rem);
 }
@@ -55,20 +55,18 @@
   object-fit: cover;
 }
 
-.reviews {
-    font-family: Inter;
-}
+
 
 .text {
     padding: 45px 0;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding-left: clamp(1rem, 5vw, 4rem);
     padding-right: clamp(1rem, 5vw, 4rem);
 }
 
 .mission {
-    padding: 30px clamp(1rem, 5vw, 4rem);
+    padding: 30px 0;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     background-color: rgb(255, 245, 232);
@@ -78,9 +76,10 @@
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #111;
-  max-width: 1200px;
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 clamp(1rem, 5vw, 4rem);
 }
 
 .point {
@@ -88,9 +87,11 @@
   max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
+  padding: 0 clamp(1rem, 5vw, 4rem);
 }
 
 .point h3 {
+  font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: #1a1a1a;
@@ -138,6 +139,7 @@
   .text {
     padding: 30px 1.5rem;
     text-align: center;
+    font-family: Inter, sans-serif;
   }
 
   .mission {
@@ -184,5 +186,142 @@
 
   .point p {
     font-size: 1.1rem;
+  }
+}
+
+.reviewsSection {
+  padding: 40px 0 80px 0;
+  background-color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.sliderContainer {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  gap: 24px;
+  padding: 30px 10px;
+  width: 100%;
+}
+
+.slider::-webkit-scrollbar {
+  display: none;
+}
+
+.reviewCard {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .reviewCard {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviewCard {
+    flex: 0 0 calc(33.333% - 13.333px);
+  }
+}
+
+.reviewText {
+  color: #333;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  font-style: italic;
+}
+
+.reviewAuthor {
+  color: #111;
+  font-weight: 700;
+  font-size: 1rem;
+  text-align: right;
+  margin-top: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.readMoreBtn {
+  color: #004aad;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px;
+  text-decoration: underline;
+  transition: color 0.2s;
+  font-style: normal;
+}
+
+.readMoreBtn:hover {
+  color: #003080;
+}
+
+.sliderBtn {
+  background: #004aad;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, background 0.2s;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sliderBtn:hover {
+  background: #003080;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.sliderBtn:first-child {
+  left: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.sliderBtn:last-child {
+  right: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+@media (max-width: 768px) {
+  .sliderBtn {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+  .reviewCard {
+    padding: 25px;
+  }
+  .reviewText {
+    font-size: 1rem;
   }
 }

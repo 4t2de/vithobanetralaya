@@ -1,0 +1,25 @@
+{
+    "reviews": [
+        {
+            "name": "Moses Manumala",
+            "review": "I had brought my mother here for her eye problem suspected Glaucoma. Dr. Revankar inspected and done CT scan of the eye and now she is fine.
+
+Dr. Revankar is very good doctor. He is so much experienced that with minimal test he gives you correct diagnosis.
+
+In other places most of all the inspection is done by the juniors and based on junior reports doctor prescribes the treatment. But here Dr. Revankar himself does all the eye inspection.
+
+Even I had checked my eyes here 10years back for head ache and I was suspecting that I might have got specs but after inspection doctor said that you don't have specs and suggested only multivitamin tablet and I was relieved from headache in 2days.
+
+I strongly recommend people to visit Vithoba Netralaya !"
+        },
+        {
+            "name": "Sanjana Pawaskar",
+            "review": "Dr. Anant Revankar is an excellent and very kind eye specialist. His treatment was very effective, and he explains everything clearly and patiently. The staff and nurses are also polite and supportive.
+Highly recommended."
+        },
+        {
+            "name": "NSP Punekar",
+            "review": "Excellent eye doctor and a very nice human being. Brings out a lot of confidence in the patient. It is always a pleasure to see this person - both professionally and personally. Your eyes are safe in his hands as he updates his knowledge every day"
+        }
+    ]
+}

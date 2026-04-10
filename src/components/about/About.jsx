@@ -1,9 +1,71 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import styles from "./about.module.css";
 import aboutBg from "../../images/aboutng.jpg";
 import extra from "../../images/extra.jpg";
 
+const reviewsData = [
+  {
+    name: "Aafaq, JustDial",
+    review: "The eye specialist Dr. Anant highly skilled and kind.. He gently listened to my eye condition that has been troubling me for a while. I am of the opinion his core strength is his skill and empathy."
+  },
+  {
+    name: "Moses Manumala",
+    review: "I had brought my mother here for her eye problem suspected Glaucoma. Dr. Revankar inspected and done CT scan of the eye and now she is fine.\n\nDr. Revankar is very good doctor. He is so much experienced that with minimal test he gives you correct diagnosis.\n\nIn other places most of all the inspection is done by the juniors and based on junior reports doctor prescribes the treatment. But here Dr. Revankar himself does all the eye inspection.\n\nEven I had checked my eyes here 10years back for head ache and I was suspecting that I might have got specs but after inspection doctor said that you don't have specs and suggested only multivitamin tablet and I was relieved from headache in 2days.\n\nI strongly recommend people to visit Vithoba Netralaya !"
+  },
+  {
+    name: "Sanjana Pawaskar",
+    review: "Dr. Anant Revankar is an excellent and very kind eye specialist. His treatment was very effective, and he explains everything clearly and patiently. The staff and nurses are also polite and supportive.\nHighly recommended."
+  },
+  {
+    name: "NSP Punekar",
+    review: "Excellent eye doctor and a very nice human being. Brings out a lot of confidence in the patient. It is always a pleasure to see this person - both professionally and personally. Your eyes are safe in his hands as he updates his knowledge every day"
+  }
+];
+
+const ReviewCard = ({ rev }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const textLimit = 150;
+  
+  const shouldTruncate = rev.review.length > textLimit;
+  const displayText = isExpanded ? rev.review : (shouldTruncate ? rev.review.substring(0, textLimit) + "..." : rev.review);
+
+  return (
+    <div className={styles.reviewCard}>
+      <p className={styles.reviewText}>
+        "{displayText}"
+        {shouldTruncate && (
+          <span 
+            className={styles.readMoreBtn} 
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? " Show less" : " Read more"}
+          </span>
+        )}
+      </p>
+      <p className={styles.reviewAuthor}>— {rev.name}</p>
+    </div>
+  );
+};
+
 const About = () => {
+  const scrollRef = useRef(null);
+  const infiniteReviews = Array(5).fill(reviewsData).flat();
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      let scrollTo = direction === "left" ? scrollLeft - clientWidth : scrollLeft + clientWidth;
+      
+      if (direction === "right" && scrollLeft + clientWidth >= scrollWidth - 10) {
+        scrollTo = 0;
+      } else if (direction === "left" && scrollLeft <= 10) {
+        scrollTo = scrollWidth;
+      }
+      
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className={styles.principle}>
       <div
@@ -94,19 +156,20 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div className={styles.reviews}>
+      <div className={styles.reviewsSection}>
         <div className={styles.text}>
           <h1 style={{ color: "black", paddingBottom: 15 }}>
             Hear what our patients say.
           </h1>
-          <p style={{ color: "#555", fontSize: 30 }}>
-            "The eye specialist Dr. Anant highly skilled and kind.. He gently
-            listened to my eye condition that has been troubling me for a while.
-            I am of the opinion his core strength is his skill and empathy."
-          </p>
-          <p style={{ color: "#555", textAlign: "right", fontSize: 22 }}>
-            — Aafaq, JustDial
-          </p>
+        </div>
+        <div className={styles.sliderContainer}>
+          <button className={styles.sliderBtn} onClick={() => scroll("left")}>&#8249;</button>
+          <div className={styles.slider} ref={scrollRef}>
+            {infiniteReviews.map((rev, index) => (
+              <ReviewCard key={index} rev={rev} />
+            ))}
+          </div>
+          <button className={styles.sliderBtn} onClick={() => scroll("right")}>&#8250;</button>
         </div>
       </div>
     </div>
