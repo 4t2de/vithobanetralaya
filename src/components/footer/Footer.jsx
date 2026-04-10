@@ -17,11 +17,11 @@ const Footer = () => {
           </div>
           <div className={styles.item}>
             <Phone />
-            <p>9448923336</p>
+            <p><a href="tel:+919448923336" className={styles.footerLink}>9448923336</a></p>
           </div>
           <div className={styles.item}>
             <Mail />
-            <p>vithobanetralaya@gmail.com</p>
+            <p><a href="mailto:vithobanetralaya@gmail.com" className={styles.footerLink}>vithobanetralaya@gmail.com</a></p>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ const Footer = () => {
         <div className={styles.emergency}>
           <h3>Emergency</h3>
           <p>Emergency surgeries are performed as per availability.</p>
-          <div className={styles.hotline}>Emergency Hotline: 08364253595</div>
+          <div className={styles.hotline}>Emergency Hotline: <a href="tel:08364253595" className={styles.hotlineLink}>08364253595</a></div>
         </div>
       </div>
 

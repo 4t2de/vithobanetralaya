@@ -14,6 +14,7 @@
     justify-content: center;
     color: white;
     height: 40vh;
+    width: 100%;
 }
 
 .heading {
@@ -23,15 +24,17 @@
     font-size: 40px;
     font-family: 'Inter', serif;
     letter-spacing: -1.5px;
-    margin-left: 340px;
-    margin-bottom: 80px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 4rem);
+    padding-bottom: 80px;
 }
 
 .info {
-    padding-top: 45px;
-    padding-left: 340px;
-    padding-right: 340px;
-    padding-bottom: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 45px clamp(1rem, 5vw, 4rem) 30px;
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
 }
@@ -45,7 +48,7 @@
 .iconinfo {
   display: flex;
   justify-content: center;
-  gap: 9rem;
+  gap: clamp(2rem, 5vw, 9rem);
   flex-wrap: wrap;
   padding-top: 30px;
 }
@@ -78,6 +81,18 @@
   margin: 0.2rem 0;
 }
 
+.anchorLink {
+  font-weight: bold;
+  color: #0072a3;
+  margin: 0.2rem 0;
+  text-decoration: none;
+  display: block;
+}
+
+.anchorLink:hover {
+  text-decoration: underline;
+}
+
 .subheading {
   color: #f45700;
   font-size: 2rem;
@@ -100,97 +115,65 @@
 
 @media (max-width: 768px) {
   .background {
-    min-height: 30vh;
-    justify-content: center;
-    padding: 1rem;
-    align-items: center;
+    min-height: 35vh;
   }
 
   .container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    color: white;
-    padding: 1rem;
+    height: 35vh;
   }
 
   .heading {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    padding-bottom: 50px;
     text-align: center;
-    margin: 0 1rem 1rem;
   }
 
   .info {
-    padding: 30px 20px;
+    padding: 60px 1.5rem;
   }
 
   .info h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
     text-align: center;
+    margin-bottom: 2.5rem;
   }
 
   .iconinfo {
     flex-direction: column;
-    gap: 2.5rem;
-    padding: 20px;
+    gap: 3.5rem;
     align-items: center;
+    padding-top: 20px;
   }
 
   .card {
     max-width: 100%;
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
   .card p {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
 
   .iconCircle {
     width: 100px;
     height: 100px;
-    margin-bottom: 20px;
-  }
-
-  .subheading {
-    font-size: 1.5rem;
-    margin: 1.5rem 0 1rem;
+    margin-bottom: 25px;
   }
 
   .mapContainer {
-    height: 300px;
+    height: 350px;
     width: 90%;
-    border-radius: 10px;
-    padding-bottom: 60px;
+    border-radius: 12px;
+    padding-bottom: 80px;
+    margin-top: 4rem;
   }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
-  .background {
-    min-height: 35vh;
-    justify-content: center;
-    padding: 2rem;
-    align-items: center;
-  }
-
-  .container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    color: white;
-    padding: 2rem;
-  }
-
   .heading {
     font-size: 2.4rem;
-    text-align: center;
-    margin: 0 2rem 2rem;
-    margin-bottom: 40px;
-  }
-
-  .info {
-    padding: 40px 60px;
+    padding-bottom: 50px;
   }
 
   .info h1 {
@@ -199,11 +182,7 @@
   }
 
   .iconinfo {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 4rem;
-    padding: 2rem;
+    gap: 3rem;
   }
 
   .card {
@@ -215,14 +194,9 @@
   }
 
   .iconCircle {
-    width: 110px;
-    height: 110px;
-    margin-bottom: 30px;
-  }
-
-  .subheading {
-    font-size: 1.8rem;
-    margin-top: 2rem;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 25px;
   }
 
   .mapContainer {

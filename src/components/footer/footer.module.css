@@ -8,9 +8,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 clamp(1rem, 5vw, 4rem);
 }
 
 .contact h3,
@@ -31,6 +31,7 @@
 
 .item svg {
   margin-right: 0.5rem;
+  flex-shrink: 0;
 }
 
 .links ul {
@@ -66,8 +67,24 @@
   text-align: center;
   border-radius: 2rem;
   font-weight: bold;
-  margin-top: 90px;
+  margin-top: 1.5rem;
   font-family: Inter;
+}
+
+.footerLink {
+  color: white;
+  text-decoration: none;
+}
+.footerLink:hover {
+  text-decoration: underline;
+}
+
+.hotlineLink {
+  color: white;
+  text-decoration: none;
+}
+.hotlineLink:hover {
+  text-decoration: underline;
 }
 
 .copyright {
@@ -78,24 +95,30 @@
 }
 
 .address {
-  max-width: 200px;
+  max-width: 250px;
 }
 
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2rem;
   }
 
   .item {
     justify-content: center;
   }
 
+  .address {
+    max-width: none;
+  }
+
   .hotline {
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    padding: 0.75rem 1.5rem;
   }
 }
 
@@ -103,21 +126,10 @@
   .container {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    text-align: left;
-    padding: 0 2rem;
-  }
-
-  .item {
-    justify-content: flex-start;
   }
 
   .hotline {
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: fit-content;
-    margin-left: 0;
-  }
-
-  .copyright {
-    padding: 2rem 2rem 0;
   }
 }

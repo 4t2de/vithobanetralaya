@@ -1,9 +1,9 @@
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
+.navbarWrapper {
+  width: 100%;
+  background-color: white;
   transition: background-color 0.3s ease-in-out;
+  position: relative;
+  z-index: 1000;
 }
 
 .transparent {
@@ -11,35 +11,53 @@
   backdrop-filter: blur(5px);
 }
 
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 5vw, 4rem);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
 .logo {
-  margin-left: 340px;
   height: 60px;
+  flex-shrink: 0;
+  margin-left: -20px;
 }
 
 .logotext {
   font-family: 'Spectral', sans-serif;
   letter-spacing: -1px;
-  position: absolute;
-  margin-left: 440px;
   font-size: 25px;
   text-decoration: none;
   color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .links {
   display: flex;
   gap: 20px;
-  flex: 1;
   font-size: 18px;
   align-items: center;
-  justify-content: flex-end;
-  margin-right: 360px;
 }
 
 .link {
   color: black;
   text-decoration: none;
   font-family: Inter, sans-serif;
+  white-space: nowrap;
 }
 
 .button {
@@ -65,79 +83,115 @@
   background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
+/* Hamburger - hidden on desktop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bar.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* ---- Tablet & Mobile (≤1024px) ---- */
+@media (max-width: 1024px) {
   .container {
-    flex-direction: column;
+    height: 80px;
+    padding: 0 1.5rem;
     justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 10px 20px;
-    gap: 10px;
+    position: relative;
   }
 
   .logo {
-    margin: 0;
     height: 50px;
   }
 
   .logotext {
-    position: static;
-    margin: 0;
     font-size: 20px;
-    text-align: center;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 1.5rem;
   }
 
   .links {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    padding: 100px 2rem 2rem;
+    gap: 24px;
+    z-index: 1000;
+  }
+
+  .links.show {
+    display: flex;
+  }
+
+  .link {
+    font-size: 18px;
+    padding: 8px 0;
   }
 
   .button {
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
   }
 
   .link.cta {
-    width: auto;
+    width: 100%;
     text-align: center;
-    font-size: 14px;
-    padding: 0.5rem 1rem;
+    font-size: 15px;
+    height: 48px;
   }
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 480px) {
   .container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    padding: 15px 40px;
-    gap: 10px;
+    height: 70px;
+    padding: 0 1rem;
   }
 
   .logo {
-    margin: 0;
-    height: 55px;
+    height: 40px;
   }
 
   .logotext {
-    position: static;
-    margin: 0;
-    font-size: 22px;
-    text-align: center;
+    font-size: 17px;
   }
 
   .links {
-    display: none;
-  }
-
-  .button {
-    justify-content: center;
     width: 100%;
-  }
-
-  .link.cta {
-    width: auto;
-    padding: 0.5rem 1.25rem;
-    font-size: 15px;
   }
 }

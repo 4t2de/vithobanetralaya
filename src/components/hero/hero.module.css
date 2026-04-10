@@ -5,7 +5,7 @@
     min-height: 55vh;
     display: flex;
     align-items: flex-start;
-    justify-content:left;
+    justify-content: left;
     position: relative;
     overflow: hidden;
 }
@@ -17,13 +17,17 @@
     color: white;
     height: 60vh;
     transition: opacity 0.5s ease-out;
-} 
+    width: 100%;
+}
 
 .heading {
     text-align: left;
     color: white;
-    margin-left: 340px;
-    margin-bottom: 40px;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 4rem);
+    padding-bottom: 40px;
 }
 
 .title {
@@ -40,24 +44,16 @@
 
 @media (max-width: 768px) {
   .background {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 60vh;
-    padding: 20px;
+    min-height: 50vh;
   }
 
   .container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
     height: auto;
-    padding: 10px;
+    min-height: 50vh;
   }
 
   .heading {
-    margin-left: 0;
-    margin-bottom: 20px;
+    padding-bottom: 30px;
     text-align: center;
   }
 
@@ -70,34 +66,20 @@
   }
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 480px) {
   .background {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
-    min-height: 60vh;
+    min-height: 40vh;
   }
 
   .container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    height: auto;
-    padding: 20px;
-  }
-
-  .heading {
-    margin-left: 0;
-    margin-bottom: 30px;
-    text-align: center;
+    min-height: 40vh;
   }
 
   .title {
-    font-size: 32px;
+    font-size: 24px;
   }
 
   .details {
-    font-size: 18px;
+    font-size: 15px;
   }
 }

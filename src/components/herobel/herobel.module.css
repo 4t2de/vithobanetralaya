@@ -2,27 +2,28 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
+    padding: 4rem clamp(1rem, 5vw, 4rem);
     background: white;
-    height: 70vh;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 3rem;
+    min-height: 50vh;
 }
 
 .image img {
-    height: 550px;
-    width: 550px;
+    height: auto;
+    width: 100%;
+    max-width: 480px;
     border-radius: 20%;
     object-fit: cover;
-    margin-right: 120px;
-    margin-left: 50px;
 }
 
 .heading {
-    max-width: 30%;
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    margin-left: 120px;
-    margin-right: 50px;
+    min-width: 0;
 }
 
 .title {
@@ -62,28 +63,23 @@
     background-color: #0056b3;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .container {
-    flex-direction: column;
-    height: auto;
-    padding: 1.5rem;
+    flex-direction: column-reverse;
     text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    gap: 2rem;
   }
 
   .image img {
-    width: 90%;
-    height: auto;
-    margin: 0 auto 2rem;
+    max-width: 400px;
+    width: 80%;
     border-radius: 20px;
-    padding-top: 20px;
-    display: none;
   }
 
   .heading {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 1rem;
-    gap: 1rem;
+    align-items: center;
   }
 
   .title {
@@ -91,7 +87,7 @@
   }
 
   .details {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 
   .button {
@@ -106,44 +102,21 @@
   }
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
+@media (max-width: 480px) {
   .container {
-    flex-direction: column;
-    height: auto;
-    padding: 2rem;
-    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .image img {
-    width: 60%;
-    height: auto;
-    margin: 0 auto 2rem;
-    border-radius: 20px;
-  }
-
-  .heading {
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 0 2rem;
-    gap: 1.2rem;
+    max-width: 300px;
   }
 
   .title {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .details {
-    font-size: 1.1rem;
-  }
-
-  .button {
-    display: flex;
-    justify-content: center;
-  }
-
-  .click {
-    width: 100%;
-    max-width: 240px;
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 }

@@ -51,7 +51,7 @@ const Treatments = () => {
       </div>
       <div className={styles.cards}>
         <div className={styles.space}>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={eyeExam} alt="Eye exam" loading="lazy" />;
@@ -68,7 +68,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={lasik} alt="Lasik" loading="lazy" />;
@@ -86,7 +86,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={cataract} alt="Cataract" loading="lazy" />;
@@ -103,7 +103,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={stye} alt="stye" loading="lazy" />;
@@ -120,7 +120,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img
@@ -142,7 +142,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={dryEye} alt="Dry Eye" loading="lazy" />;
@@ -159,7 +159,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={csr} alt="csr" loading="lazy" />;
@@ -177,7 +177,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={glaucoma} alt="glaucoma" loading="lazy" />;
@@ -194,7 +194,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={macular} alt="macular" loading="lazy" />;
@@ -211,7 +211,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={stye2} alt="stye" loading="lazy" />;
@@ -228,7 +228,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={eyebag} alt="eyebag removal" loading="lazy" />;
@@ -245,7 +245,7 @@ const Treatments = () => {
               </Typography>
             </CardContent>
           </Card>
-          <Card variant="soft" sx={{ width: 360 }}>
+          <Card variant="soft" sx={{ width: "100%", maxWidth: 360 }}>
             <CardOverflow>
               <AspectRatio ratio="2">
                 <img src={squint} alt="squint correction" loading="lazy" />;

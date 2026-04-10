@@ -19,25 +19,25 @@ const Contact = () => {
         <div className={styles.iconinfo}>
           <div className={styles.card}>
             <div className={styles.iconCircle}>
-              <Phone color="white" size={48} />
+              <Phone color="white" size={40} />
             </div>
             <p>Please call/WhatsApp us on</p>
-            <p className={styles.bold}>94489 23336</p>
+            <a href="tel:+919448923336" className={styles.anchorLink}>94489 23336</a>
             <p>to get support.</p>
           </div>
 
           <div className={styles.card}>
             <div className={styles.iconCircle}>
-              <Mail color="white" size={48} />
+              <Mail color="white" size={40} />
             </div>
             <p>Please mail us on</p>
-            <p className={styles.bold}>vithobanetralaya@gmail.com</p>
+            <a href="mailto:vithobanetralaya@gmail.com" className={styles.anchorLink}>vithobanetralaya@gmail.com</a>
             <p>to get support.</p>
           </div>
 
           <div className={styles.card}>
             <div className={styles.iconCircle}>
-              <MapPin color="white" size={48} />
+              <MapPin color="white" size={40} />
             </div>
             <p>Vithoba Netralaya</p>
             <p className={styles.bold}>Vikas Nagar</p>

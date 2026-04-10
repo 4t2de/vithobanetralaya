@@ -14,6 +14,7 @@
     justify-content: center;
     color: white;
     height: 40vh;
+    width: 100%;
 }
 
 .heading {
@@ -23,16 +24,17 @@
     font-size: 40px;
     font-family: 'Inter', serif;
     letter-spacing: -1.5px;
-    margin-left: 340px;
-    margin-bottom: 80px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 clamp(1rem, 5vw, 4rem);
+    padding-bottom: 80px;
 }
 
 .descrips {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  height: auto; 
-  padding: 60px 340px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px clamp(1rem, 5vw, 4rem);
 }
 
 .description {
@@ -46,29 +48,27 @@
 .floatedImage {
   float: right;
   margin: 40px 0 30px 40px;
-  height: 450px;
-  width: 450px;
+  height: auto;
+  width: 100%;
+  max-width: 400px;
   border-radius: 20%;
   object-fit: cover;
 }
 
 .reviews {
-    height: auto;
     font-family: Inter;
 }
 
 .text {
-    padding-top: 45px;
-    margin-left: 340px;
-    margin-right: 340px;
-    padding-bottom: 45px;
+    padding: 45px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: clamp(1rem, 5vw, 4rem);
+    padding-right: clamp(1rem, 5vw, 4rem);
 }
 
 .mission {
-    padding-top: 30px;
-    padding-left: 340px;
-    padding-right: 340px;
-    padding-bottom: 30px;
+    padding: 30px clamp(1rem, 5vw, 4rem);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     background-color: rgb(255, 245, 232);
@@ -78,10 +78,16 @@
   font-size: 2.5rem;
   margin-bottom: 2rem;
   color: #111;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .point {
   margin-bottom: 2.5rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .point h3 {
@@ -100,124 +106,76 @@
 @media (max-width: 768px) {
   .background {
     min-height: 30vh;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
   }
 
   .container {
-    height: auto;
-    padding: 1rem;
-    justify-content: center;
-    text-align: center;
+    height: 30vh;
   }
 
   .heading {
-    margin-left: 0;
-    margin-bottom: 30px;
     font-size: 1.8rem;
-    text-align: center;
+    padding-bottom: 40px;
   }
 
   .descrips {
-    flex-direction: column;
     padding: 1.5rem;
-    align-items: center;
-    gap: 2rem;
   }
 
   .description {
     font-size: 1rem;
-    text-align: justify;
+    text-align: center;
   }
 
   .floatedImage {
-    width: 90%;
-    height: auto;
-    border-radius: 20px;
-    margin: 0 auto;
     float: none;
-    margin: 0;
-    margin-left: 20px;
-    margin-top: 20px;
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 20px;
+    margin: 0 auto 1.5rem auto;
   }
 
-  .text,
+  .text {
+    padding: 30px 1.5rem;
+    text-align: center;
+  }
+
   .mission {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 30px 1.5rem;
   }
 
   .mission h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     text-align: center;
   }
 
   .point h3 {
     font-size: 1.2rem;
+    text-align: center;
   }
 
   .point p {
     font-size: 1rem;
+    text-align: center;
   }
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
-  .background {
-    min-height: 35vh;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  .container {
-    height: auto;
-    padding: 2rem;
-    justify-content: center;
-    text-align: center;
-  }
-
   .heading {
-    margin-left: 0;
-    margin-bottom: 40px;
     font-size: 2.2rem;
-    text-align: center;
+    padding-bottom: 50px;
   }
 
-  .descrips {
-    flex-direction: column;
-    padding: 3rem;
-    align-items: center;
-    gap: 2rem;
+  .floatedImage {
+    max-width: 320px;
   }
 
   .description {
     font-size: 1.1rem;
-    text-align: justify;
-  }
-
-  .floatedImage {
-    width: 80%;
-    height: auto;
-    border-radius: 20px;
-    float: none;
-    margin: 0;
-    margin-top: 30px;
-  }
-
-  .text,
-  .mission {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 
   .mission h1 {
     font-size: 2.2rem;
-    text-align: center;
   }
 
   .point h3 {
